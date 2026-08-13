@@ -70,12 +70,19 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
 /* ---- Header ---- */
 .nav{position:sticky;top:0;z-index:50;background:rgba(244,244,245,.82);backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(0,0,0,.04)}
-.nav-in{display:flex;align-items:center;gap:24px;height:70px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--obsidian);letter-spacing:-.02em}
+.nav-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}
+.logo-group{display:flex;align-items:center;gap:14px;min-width:0;flex:none}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--obsidian);letter-spacing:-.02em;flex:none}
 .logo-mark{width:34px;height:34px;border-radius:10px;background:var(--blue-600);display:grid;place-items:center;
   color:#fff;box-shadow:var(--shadow-blue)}
-.logo-mark svg{width:20px;height:20px}
-.nav-links{display:flex;gap:4px;margin-left:auto}
+.logo-mark svg{width:24px;height:24px}
+.logo-mark svg text{fill:currentColor}
+.nav-city{display:flex;align-items:center;gap:6px;color:var(--fog);font-size:13px;font-weight:500;
+  padding-left:14px;border-left:1px solid var(--cloud);white-space:nowrap}
+.nav-city svg{width:14px;height:14px;flex:none;color:var(--blue-600)}
+@media(max-width:760px){.nav-city{display:none}}
+.nav-links{display:flex;gap:4px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.nav-right{display:flex;align-items:center;gap:10px;flex:none}
 .nav-links a{font-size:14.5px;color:var(--iron);padding:9px 14px;border-radius:10px;font-weight:500;transition:.15s;position:relative}
 .nav-links a:hover{color:var(--obsidian);background:rgba(0,0,0,.04)}
 .nav-links a.active{color:var(--blue-700)}
@@ -85,7 +92,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
 .burger span{width:18px;height:2px;background:var(--graphite);border-radius:2px;transition:.2s}
 @media(max-width:940px){
   .nav-links{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;
-    background:var(--snow);border-bottom:1px solid var(--cloud);padding:12px 24px;gap:2px;margin:0}
+    transform:none;background:var(--snow);border-bottom:1px solid var(--cloud);padding:12px 24px;gap:2px;margin:0}
   .nav-links.open{display:flex}
   .nav-links a{padding:13px 12px;font-size:16px}
   .burger{display:flex}
