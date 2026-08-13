@@ -76,6 +76,78 @@
     window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   }
 
+  // ===== infinite draggable testimonial carousel (mobile) =====
+  document.querySelectorAll('.tgrid, .mini-tgrid').forEach(function(track){
+    var cards = Array.prototype.slice.call(track.children).filter(function(c){return c.classList.contains('tcard');});
+    if(cards.length < 2) return;
+    cards.forEach(function(c){
+      var clone = c.cloneNode(true);
+      clone.classList.add('tcard-clone');
+      clone.setAttribute('aria-hidden','true');
+      track.appendChild(clone);
+    });
+    var autoTimer=null, resumeTimer=null;
+    function mobile(){ return window.innerWidth <= 768; }
+    function startAuto(){
+      stopAuto();
+      if(!mobile() || reduce) return;
+      autoTimer = setInterval(function(){
+        var half = track.scrollWidth / 2;
+        track.scrollLeft += 1;
+        if(track.scrollLeft >= half) track.scrollLeft -= half;
+      }, 18);
+    }
+    function stopAuto(){ if(autoTimer){clearInterval(autoTimer);autoTimer=null;} }
+    function pauseThenResume(){
+      stopAuto();
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(startAuto, 3000);
+    }
+    track.addEventListener('touchstart', pauseThenResume, {passive:true});
+    track.addEventListener('touchmove', function(){clearTimeout(resumeTimer);}, {passive:true});
+    track.addEventListener('touchend', pauseThenResume, {passive:true});
+    track.addEventListener('mousedown', pauseThenResume);
+    window.addEventListener('resize', function(){ mobile() ? startAuto() : stopAuto(); });
+    startAuto();
+  });
+
+  // ===== gallery lightbox =====
+  var lightbox = document.getElementById('lightbox');
+  if(lightbox){
+    var lbImg = lightbox.querySelector('img'),
+        lbCount = lightbox.querySelector('.lightbox-count'),
+        galItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item')),
+        lbIndex = 0;
+    function showLb(i){
+      lbIndex = (i + galItems.length) % galItems.length;
+      var full = galItems[lbIndex].getAttribute('data-full');
+      lbImg.src = full;
+      lbImg.alt = galItems[lbIndex].querySelector('img').alt;
+      if(lbCount) lbCount.textContent = (lbIndex+1) + ' / ' + galItems.length;
+    }
+    galItems.forEach(function(it, i){
+      it.addEventListener('click', function(){
+        lightbox.classList.add('open');
+        document.body.style.overflow='hidden';
+        showLb(i);
+      });
+    });
+    var lbClose = lightbox.querySelector('.lightbox-close'),
+        lbPrev = lightbox.querySelector('.lightbox-prev'),
+        lbNext = lightbox.querySelector('.lightbox-next');
+    function closeLb(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
+    if(lbClose) lbClose.addEventListener('click', closeLb);
+    if(lbPrev) lbPrev.addEventListener('click', function(){ showLb(lbIndex-1); });
+    if(lbNext) lbNext.addEventListener('click', function(){ showLb(lbIndex+1); });
+    lightbox.addEventListener('click', function(e){ if(e.target===lightbox) closeLb(); });
+    document.addEventListener('keydown', function(e){
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key==='Escape') closeLb();
+      if(e.key==='ArrowLeft') showLb(lbIndex-1);
+      if(e.key==='ArrowRight') showLb(lbIndex+1);
+    });
+  }
+
   // ===== FAQ accordion =====
   document.querySelectorAll('.faq-q').forEach(function(q){
     q.addEventListener('click',function(){
@@ -247,12 +319,30 @@
       var btn=form.querySelector('button[type=submit]'),ok=form.querySelector('.form-ok');
       var originalText=btn.textContent;
       btn.disabled=true;btn.textContent='Отправляем…';
-      setTimeout(function(){
+
+      var data={
+        name:(form.querySelector('input[name=name]')||{}).value||'',
+        phone:(tel||{}).value||'',
+        email:(email||{}).value||'',
+        service:(form.querySelector('select[name=service]')||{}).value||'',
+        message:(form.querySelector('textarea[name=msg]')||{}).value||'',
+        _subject:'Новая заявка с сайта СОВИ KZ',
+        _template:'table',
+        _captcha:'false'
+      };
+
+      function finish(){
         if(ok)ok.style.display='flex';
         form.reset();
         form.querySelectorAll('.csel').forEach(function(w){var s=w.querySelector('select');if(s){s.selectedIndex=0;w.querySelector('.csel-label').textContent=s.options[0].textContent;}});
         btn.disabled=false;btn.textContent=originalText;
-      },700);
+      }
+
+      fetch('https://formsubmit.co/ajax/sovi-kz@mail.ru',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
+      }).then(function(){finish();}).catch(function(){finish();});
     });
     form.querySelectorAll('input[type=checkbox][data-consent]').forEach(function(c){
       c.addEventListener('change',function(){
