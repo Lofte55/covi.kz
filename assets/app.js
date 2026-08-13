@@ -120,7 +120,7 @@
         lbIndex = 0;
     function showLb(i){
       lbIndex = (i + galItems.length) % galItems.length;
-      var full = galItems[lbIndex].getAttribute('data-full');
+      var full = galItems[lbIndex].querySelector('img').getAttribute('data-full');
       lbImg.src = full;
       lbImg.alt = galItems[lbIndex].querySelector('img').alt;
       if(lbCount) lbCount.textContent = (lbIndex+1) + ' / ' + galItems.length;
