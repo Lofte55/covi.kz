@@ -12,57 +12,114 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M8 20V13l8-4 8 4v7' stroke='white' stroke-width='2' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M8 20h16' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
 </head>
 <body>
-<header class="nav"><div class="wrap nav-in">
-  <a href="index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V9l8-4 8 4v9" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 18h16M9 18v-5h6v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>СОВИ<span style="color:var(--blue-600)">.KZ</span></a>
-  <nav class="nav-links" id="nav"><a href="svh.html">СВХ</a><a href="tamozhennyy-sklad.html">Таможенный склад</a><a href="zhd-tupik.html">ЖД тупик</a><a href="obrabotka-gruzov.html">Обработка грузов</a><a href="o-kompanii.html" class="active">О компании</a><a href="kontakty.html">Контакты</a></nav>
-  <div class="nav-cta"><a href="tel:+77013161179" class="btn btn-ghost nav-phone">+7 701 316 11 79</a><a href="kontakty.html" class="btn btn-primary">Оставить заявку</a></div>
-  <button class="burger" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
-</div></header>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5h11l3.5 3.5v7.5a1 1 0 01-1 1H4a1 1 0 01-1-1V7.5a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="18.5" r="1.4" fill="currentColor"/><circle cx="15.5" cy="18.5" r="1.4" fill="currentColor"/><path d="M8 13.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      СОВИ<span style="color:var(--blue-600)">.KZ</span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <div class="has-drop">
+        <button class="drop-trigger" type="button" style="background:none;border:0;font:inherit;color:var(--iron);cursor:pointer;padding:9px 14px;border-radius:10px;font-size:14.5px;font-weight:500" aria-haspopup="true">
+          Услуги <svg class="dchev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="drop-panel">
+          <div class="drop-grid">
+            <a href="svh.html" class="drop-item"><span class="di"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="dt">Таможенный СВХ</span><span class="dd">Приём и хранение под контролем</span></span></a>
+            <a href="tamozhennyy-sklad.html" class="drop-item"><span class="di"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><span class="dt">Таможенный склад</span><span class="dd">Долгосрочное ответственное хранение</span></span></a>
+            <a href="zhd-tupik.html" class="drop-item"><span class="di"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="6" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="18" r="1.6" fill="currentColor"/><circle cx="15" cy="18" r="1.6" fill="currentColor"/></svg></span><span><span class="dt">ЖД тупик</span><span class="dd">Прирельсовый склад, приём вагонов</span></span></a>
+            <a href="obrabotka-gruzov.html" class="drop-item"><span class="di"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="8" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M14 10h4l3 3v3h-7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.8" fill="currentColor"/><circle cx="17" cy="18" r="1.8" fill="currentColor"/></svg></span><span><span class="dt">Обработка грузов</span><span class="dd">Погрузчик, кран, перевозка</span></span></a>
+          </div>
+        </div>
+      </div>
+      <a href="o-kompanii.html" class="active">О компании</a>
+      <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="msg-icons">
+      <a href="https://wa.me/77013161179" class="msg-ico" aria-label="Написать в WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.72 14.2c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36h.55c.18 0 .42-.03.65.5.24.55.8 1.9.87 2.04.07.14.12.3.02.49-.1.19-.15.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.33 1.44.28.14.44.12.6-.07.17-.19.71-.83.9-1.12.19-.28.38-.24.63-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg></a>
+      <a href="https://t.me/sovi_kz_pvl" class="msg-ico" aria-label="Написать в Telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3c.3-1.1-.7-1.9-1.7-1.5L2.9 9.7c-1.1.4-1.1 1.9 0 2.3l4.4 1.4 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.8.6 1.9.2 2.1-.8l3.1-14.1zM7.8 12.9l10.4-6.5c.3-.2.6.1.3.4l-8.7 8-.3 3.4-1.7-5.3z"/></svg></a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+77013161179" class="btn btn-ghost nav-phone">+7 701 316 11 79</a>
+      <button type="button" class="btn btn-primary" data-modal-open>Оставить заявку</button>
+    </div>
+    <button class="burger" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
 <main>
 <section class="pg-hero">
   <div class="wrap">
     <div class="crumb reveal in"><a href="index.html">Главная</a><span>/</span>О компании</div>
-    <div style="max-width:820px" class="reveal in">
-      <span class="badge badge-blue" style="margin-bottom:18px">О компании</span>
-      <h1 class="display">Таможенный терминал СОВИ KZ в Павлодаре</h1>
-      <p class="lead" style="margin-top:18px">СОВИ KZ — это таможенный терминал полного цикла: склад временного хранения, таможенный склад, собственный железнодорожный тупик и обработка грузов. Мы принимаем, храним и обрабатываем грузы любого размера, а брокер и представитель сопровождают документы до завершения доставки в ДГД.</p>
+    <div class="about-hero-grid">
+      <div class="reveal in">
+        <span class="badge badge-blue" style="margin-bottom:18px">О компании</span>
+        <h1 class="display">Таможенный терминал СОВИ KZ в Павлодаре</h1>
+        <p class="lead" style="margin-top:18px">Полный цикл: склад временного хранения, таможенный склад, собственный железнодорожный тупик и обработка грузов. Принимаем, храним и обрабатываем грузы любого размера, а брокер и представитель сопровождают документы до завершения доставки в ДГД.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px">
+          <button type="button" data-modal-open class="btn btn-primary btn-lg">Связаться с нами</button>
+          <a href="tel:+77013161179" class="btn btn-ghost btn-lg">+7 701 316 11 79</a>
+        </div>
+      </div>
+      <div class="reveal in img-reveal" style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--cloud);aspect-ratio:4/3">
+        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=900&q=80&auto=format&fit=crop" alt="Складские стеллажи терминала СОВИ KZ" loading="eager" style="width:100%;height:100%;object-fit:cover">
+      </div>
     </div>
   </div>
 </section>
 
 <section style="padding-top:24px">
   <div class="wrap">
-    <div class="stats-band reveal">
-      <div class="s"><div class="n">28<span>+</span></div><div class="t">стран — география принятых грузов</div></div>
-      <div class="s"><div class="n">1500 <span>м²</span></div><div class="t">крытый прирельсовый склад</div></div>
+    <div class="stats-band reveal-group">
+      <div class="s"><div class="n"><span data-count="28" data-suffix="+">28+</span></div><div class="t">стран — география принятых грузов</div></div>
+      <div class="s"><div class="n"><span data-count="1500" data-suffix=" м²">1500 м²</span></div><div class="t">крытый прирельсовый склад</div></div>
       <div class="s"><div class="n">24/7</div><div class="t">охрана и видеонаблюдение</div></div>
-      <div class="s"><div class="n">4</div><div class="t">направления услуг под ключ</div></div>
+      <div class="s"><div class="n"><span data-count="4">4</span></div><div class="t">направления услуг под ключ</div></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap"><div class="dark reveal"><div class="dark-glow"></div>
-    <div style="position:relative;max-width:680px"><span class="eyebrow" style="color:#7ba9ff">Наши принципы</span><h2 class="h-md" style="margin:16px 0 12px">Работаем так, чтобы вам было спокойно за груз</h2></div>
-    <ul class="arrow-list" style="position:relative;margin-top:32px">
-      <li><span class="ai"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Безопасность.</strong> Охраняемая территория с видеонаблюдением 24/7 — груз под чётким контролем.</span></li>
-      <li><span class="ai"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Надёжность.</strong> Многолетний опыт работы с разными грузами и типами транспорта.</span></li>
-      <li><span class="ai"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Оперативность.</strong> Круглосуточная подача и уборка грузов под ритм вашей логистики.</span></li>
-      <li><span class="ai"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Доступность.</strong> Прямое сопряжение со станцией Павлодар и главными транспортными артериями.</span></li>
-      <li><span class="ai"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Профессионализм.</strong> Опыт работы с грузами из 28 стран и знание таможенных процедур.</span></li>
-      <li><span class="ai"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Универсальность.</strong> Принимаем грузы всех размеров — от почтовых отправлений до вагонов и контейнеров.</span></li>
-    </ul>
-  </div></div>
-</section>
-
+<!-- VALUES -->
 <section>
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Что говорят клиенты</span><h2 class="h-md">Отзывы о работе терминала</h2></div>
-    <div class="grid g-3">
-      <div class="card reveal"><p style="font-size:16px;color:var(--iron);line-height:1.6">«Быстро оформили документы и приняли груз без задержек. Приятно работать, когда всё чётко и по делу».</p><div style="display:flex;align-items:center;gap:12px;margin-top:20px"><span style="width:42px;height:42px;border-radius:50%;background:var(--blue-600);color:#fff;display:grid;place-items:center;font-weight:600">Р</div><div><div style="font-weight:600;color:var(--obsidian);font-size:14.5px">Руслан Абишев</div><div style="font-size:13px;color:var(--fog)">импортёр, автозапчасти</div></div></div></div>
-      <div class="card reveal"><p style="font-size:16px;color:var(--iron);line-height:1.6">«Удобно, что есть свой ж/д тупик и весы. Разгрузили вагон и перегрузили на авто в тот же день».</p><div style="display:flex;align-items:center;gap:12px;margin-top:20px"><span style="width:42px;height:42px;border-radius:50%;background:var(--blue-700);color:#fff;display:grid;place-items:center;font-weight:600">Г</div><div><div style="font-weight:600;color:var(--obsidian);font-size:14.5px">Гульмира Сейтова</div><div style="font-size:13px;color:var(--fog)">логист, стройматериалы</div></div></div></div>
-      <div class="card reveal"><p style="font-size:16px;color:var(--iron);line-height:1.6">«Профессиональный подход и охрана 24/7 — оставляли крупную партию на хранение, всё в целости».</p><div style="display:flex;align-items:center;gap:12px;margin-top:20px"><span style="width:42px;height:42px;border-radius:50%;background:var(--blue-900);color:#fff;display:grid;place-items:center;font-weight:600">Д</div><div><div style="font-weight:600;color:var(--obsidian);font-size:14.5px">Дмитрий Каргин</div><div style="font-size:13px;color:var(--fog)">снабжение, оборудование</div></div></div></div>
+    <div class="sec-head reveal"><span class="eyebrow">Наши принципы</span><h2 class="h-lg">Работаем так, чтобы вам было спокойно за груз</h2></div>
+    <div class="value-row reveal-group">
+      <div class="value-card"><div class="vc-n">01 — Безопасность</div><h3>Груз под контролем</h3><p>Охраняемая территория с видеонаблюдением 24/7 — весь срок хранения груз на виду.</p></div>
+      <div class="value-card"><div class="vc-n">02 — Надёжность</div><h3>Многолетний опыт</h3><p>Работаем с разными типами грузов и транспорта, знаем нюансы каждого сценария.</p></div>
+      <div class="value-card"><div class="vc-n">03 — Оперативность</div><h3>Подача 24/7</h3><p>Круглосуточная подача и уборка грузов — работаем в ритме вашей логистики.</p></div>
+      <div class="value-card"><div class="vc-n">04 — Доступность</div><h3>Рядом со станцией</h3><p>Прямое сопряжение со станцией Павлодар и главными транспортными артериями.</p></div>
+      <div class="value-card"><div class="vc-n">05 — Профессионализм</div><h3>28 стран опыта</h3><p>Знаем специфику таможенного оформления грузов из разных юрисдикций.</p></div>
+      <div class="value-card"><div class="vc-n">06 — Универсальность</div><h3>Любой размер груза</h3><p>От почтовых отправлений до вагонов, контейнеров и автотранспорта.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="dark reveal"><div class="dark-glow"></div>
+      <div style="position:relative;max-width:640px"><span class="eyebrow" style="color:#7ba9ff">Как мы росли</span><h2 class="h-md" style="margin:16px 0 4px">От локального СВХ до терминала полного цикла</h2></div>
+      <div class="timeline" style="position:relative">
+        <div class="tl-row" style="border-color:rgba(255,255,255,.1)"><div class="tl-y" style="color:#7ba9ff">Этап 1</div><div class="tl-t" style="color:#e6ecf7">Открыли таможенный склад временного хранения в Северной промзоне Павлодара.</div></div>
+        <div class="tl-row" style="border-color:rgba(255,255,255,.1)"><div class="tl-y" style="color:#7ba9ff">Этап 2</div><div class="tl-t" style="color:#e6ecf7">Построили собственный железнодорожный тупик и прирельсовый склад 1500 м².</div></div>
+        <div class="tl-row" style="border-color:rgba(255,255,255,.1)"><div class="tl-y" style="color:#7ba9ff">Этап 3</div><div class="tl-t" style="color:#e6ecf7">Добавили услуги обработки грузов: погрузчик, кран, бригады и перевозку.</div></div>
+        <div class="tl-row" style="border-color:rgba(255,255,255,.1)"><div class="tl-y" style="color:#7ba9ff">Сегодня</div><div class="tl-t" style="color:#e6ecf7">Принимаем грузы из 28 стран и сопровождаем клиентов от заявки до выпуска в ДГД.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow" style="justify-content:center">Что говорят клиенты</span><h2 class="h-md">Отзывы о работе терминала</h2></div>
+    <div class="tgrid reveal-group">
+      <div class="tcard"><div class="tcard-h"><span class="tavatar" style="background:var(--blue-600)">Р</span><div><div class="nm">Руслан Абишев</div><div class="rl">импортёр · автозапчасти</div></div></div><p>Быстро оформили документы и приняли груз без задержек. Приятно работать, когда всё чётко и по делу.</p></div>
+      <div class="tcard"><div class="tcard-h"><span class="tavatar" style="background:var(--blue-700)">Г</span><div><div class="nm">Гульмира Сейтова</div><div class="rl">логист · стройматериалы</div></div></div><p>Удобно, что есть свой ж/д тупик и весы. Разгрузили вагон и перегрузили на авто в тот же день.</p></div>
+      <div class="tcard"><div class="tcard-h"><span class="tavatar" style="background:var(--blue-900)">Д</span><div><div class="nm">Дмитрий Каргин</div><div class="rl">снабжение · оборудование</div></div></div><p>Профессиональный подход и охрана 24/7 — оставляли крупную партию на хранение, всё в целости.</p></div>
+      <div class="tcard"><div class="tcard-h"><span class="tavatar" style="background:var(--blue-500)">А</span><div><div class="nm">Алия Жумабекова</div><div class="rl">ВЭД-менеджер · текстиль</div></div></div><p>Помогли с брокерским сопровождением и оформлением до ДГД — сняли с нас головную боль с таможней.</p></div>
+      <div class="tcard"><div class="tcard-h"><span class="tavatar" style="background:var(--blue-600)">Т</span><div><div class="nm">Тимур Оспанов</div><div class="rl">директор · логистика</div></div></div><p>Принимали контейнеры и опасный груз 5 категории. Всё по правилам, с весами и документами.</p></div>
+      <div class="tcard"><div class="tcard-h"><span class="tavatar" style="background:var(--blue-700)">Е</span><div><div class="nm">Елена Панина</div><div class="rl">закуп · ритейл</div></div></div><p>Заказывали кран и грузчиков под разгрузку негабарита. Приехали вовремя, сделали аккуратно.</p></div>
     </div>
   </div>
 </section>
@@ -70,17 +127,68 @@
 <section>
   <div class="wrap"><div class="cta-band reveal"><div class="dark-glow" style="left:-120px;top:-160px;right:auto"></div>
     <div style="position:relative"><h2 class="h-md">Хотите обсудить ваш груз?</h2><p>Свяжитесь с нами — расскажем про терминал, условия и подберём подходящую услугу.</p>
-    <div class="cta-actions"><a href="kontakty.html" class="btn btn-primary btn-lg">Связаться с нами</a><a href="tel:+77013161179" class="btn btn-ghost btn-lg">+7 701 316 11 79</a></div></div>
+    <div class="cta-actions"><button type="button" data-modal-open class="btn btn-primary btn-lg">Связаться с нами</button><a href="tel:+77013161179" class="btn btn-ghost btn-lg">+7 701 316 11 79</a></div></div>
   </div></div>
 </section>
 </main>
 
-<footer class="footer"><div class="wrap"><div class="footer-grid">
-  <div><a href="index.html" class="logo" style="margin-bottom:16px"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V9l8-4 8 4v9M4 18h16M9 18v-5h6v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>СОВИ.KZ</a><p style="color:#9fb0cf;font-size:14.5px;max-width:34ch">Таможенный СВХ, склад, ЖД тупик и обработка грузов в Павлодаре. Работаем круглосуточно.</p></div>
-  <div><h4>Услуги</h4><a href="svh.html">Таможенный СВХ</a><a href="tamozhennyy-sklad.html">Таможенный склад</a><a href="zhd-tupik.html">ЖД тупик</a><a href="obrabotka-gruzov.html">Обработка грузов</a></div>
-  <div><h4>Компания</h4><a href="o-kompanii.html">О компании</a><a href="kontakty.html">Контакты</a><a href="index.html#uslugi">Тарифы</a></div>
-  <div><h4>Контакты</h4><a href="tel:+77013161179">+7 701 316 11 79</a><a href="tel:+77182372857">+7 (7182) 37-28-57</a><a href="mailto:sovi-kz@mail.ru">sovi-kz@mail.ru</a><a href="kontakty.html">Северная промзона, стр. 1368</a></div>
-</div><div class="footer-bottom"><span>© 2026 СОВИ KZ · Павлодар · Работаем 24/7</span><span>Таможенное хранение · ЖД тупик · Обработка грузов</span></div></div></footer>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:16px"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5h11l3.5 3.5v7.5a1 1 0 01-1 1H4a1 1 0 01-1-1V7.5a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="18.5" r="1.4" fill="currentColor"/><circle cx="15.5" cy="18.5" r="1.4" fill="currentColor"/><path d="M8 13.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>СОВИ.KZ</a>
+        <p style="color:#9fb0cf;font-size:14.5px;max-width:34ch">Таможенный СВХ, склад, железнодорожный тупик и обработка грузов в Павлодаре. Работаем круглосуточно.</p>
+        <div style="display:flex;gap:8px;margin-top:16px">
+          <a href="https://wa.me/77013161179" target="_blank" rel="noopener" aria-label="WhatsApp" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.06);display:grid;place-items:center;color:#9fb0cf"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.72 14.2c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36h.55c.18 0 .42-.03.65.5.24.55.8 1.9.87 2.04.07.14.12.3.02.49-.1.19-.15.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.33 1.44.28.14.44.12.6-.07.17-.19.71-.83.9-1.12.19-.28.38-.24.63-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg></a>
+          <a href="https://t.me/sovi_kz_pvl" target="_blank" rel="noopener" aria-label="Telegram" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.06);display:grid;place-items:center;color:#9fb0cf"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M21.9 4.3c.3-1.1-.7-1.9-1.7-1.5L2.9 9.7c-1.1.4-1.1 1.9 0 2.3l4.4 1.4 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.8.6 1.9.2 2.1-.8l3.1-14.1zM7.8 12.9l10.4-6.5c.3-.2.6.1.3.4l-8.7 8-.3 3.4-1.7-5.3z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Услуги</h4><a href="svh.html">Таможенный СВХ</a><a href="tamozhennyy-sklad.html">Таможенный склад</a><a href="zhd-tupik.html">ЖД тупик</a><a href="obrabotka-gruzov.html">Обработка грузов</a></div>
+      <div><h4>Компания</h4><a href="o-kompanii.html">О компании</a><a href="kontakty.html">Контакты</a><a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a></div>
+      <div><h4>Контакты</h4><a href="tel:+77013161179">+7 701 316 11 79</a><a href="tel:+77182372857">+7 (7182) 37-28-57</a><a href="mailto:sovi-kz@mail.ru">sovi-kz@mail.ru</a><a href="kontakty.html">Северная промзона, стр. 1368</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 СОВИ KZ · Павлодар · Работаем 24/7</span>
+      <span>Таможенное хранение · ЖД тупик · Обработка грузов</span>
+    </div>
+  </div>
+</footer>
+<div class="modal-overlay" id="lead-modal">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" data-modal-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <h3 id="modal-title" class="h-sm" style="margin-bottom:6px">Оставить заявку</h3>
+    <p class="muted" style="font-size:14.5px;margin-bottom:22px">Перезвоним и рассчитаем стоимость хранения или обработки.</p>
+    <form class="lead-form" novalidate>
+      <div class="field"><label for="m-name">Имя</label><input id="m-name" name="name" type="text" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label for="m-phone">Телефон</label><input id="m-phone" name="phone" type="tel" placeholder="+7 ___ ___ __ __" required></div>
+      <div class="field"><label for="m-email">Email</label><input id="m-email" name="email" type="email" placeholder="you@company.kz"></div>
+      <div class="field"><label for="m-service">Услуга</label>
+        <div class="csel">
+          <select id="m-service" name="service">
+            <option>Таможенный СВХ</option>
+            <option>Таможенный склад / хранение</option>
+            <option>ЖД тупик (вагон, контейнер)</option>
+            <option>Обработка грузов (погрузка, кран, перевозка)</option>
+            <option>Другое / не уверен</option>
+          </select>
+          <button type="button" class="csel-btn"><span class="csel-label"></span><span class="csel-chev"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <div class="csel-list"></div>
+        </div>
+      </div>
+      <div class="field"><label for="m-msg">Комментарий</label><textarea id="m-msg" name="msg" rows="3" placeholder="Тип груза, объём, сроки, транспорт"></textarea></div>
+      <div class="consent-row">
+        <input type="checkbox" data-consent id="m-consent">
+        <label for="m-consent">Согласен(на) на <a href="politika-konfidentsialnosti.html" target="_blank" rel="noopener">обработку персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Отправить заявку</button>
+      <div class="form-ok" style="display:none;align-items:center;gap:10px;margin-top:16px;padding:14px 16px;background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;color:var(--blue-700);font-size:14.5px;font-weight:500">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Заявка отправлена. Мы свяжемся с вами в ближайшее время.
+      </div>
+    </form>
+  </div>
+</div>
+
 <script src="assets/app.js"></script>
 </body>
 </html>
