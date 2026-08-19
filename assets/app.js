@@ -351,3 +351,74 @@
     });
   });
 })();
+
+/* -- accessibility panel -- */
+(function(){
+  var root=document.documentElement;
+  var toggle=document.getElementById('a11yToggle');
+  var panel=document.getElementById('a11yPanel');
+  var closeBtn=document.getElementById('a11yClose');
+  var resetBtn=document.getElementById('a11yReset');
+  if(!toggle||!panel)return;
+
+  var KEY='sovi_a11y';
+  var state={size:0,contrast:'default',font:false,links:false,cursor:false,motion:false};
+  try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved)state=Object.assign(state,saved);}catch(e){}
+
+  var sizeClasses=['a11y-size-1','a11y-size-2','a11y-size-3'];
+  var contrastClasses=['a11y-contrast-high','a11y-contrast-bw'];
+
+  function apply(){
+    sizeClasses.forEach(function(c){root.classList.remove(c);});
+    if(state.size>0)root.classList.add(sizeClasses[state.size-1]);
+
+    contrastClasses.forEach(function(c){root.classList.remove(c);});
+    if(state.contrast==='high')root.classList.add('a11y-contrast-high');
+    if(state.contrast==='bw')root.classList.add('a11y-contrast-bw');
+
+    root.classList.toggle('a11y-font-readable',!!state.font);
+    root.classList.toggle('a11y-links-highlight',!!state.links);
+    root.classList.toggle('a11y-cursor-big',!!state.cursor);
+    root.classList.toggle('a11y-motion-off',!!state.motion);
+
+    toggle.classList.toggle('active', state.size>0||state.contrast!=='default'||state.font||state.links||state.cursor||state.motion);
+
+    panel.querySelectorAll('[data-size]').forEach(function(b){b.classList.toggle('is-on',Number(b.getAttribute('data-size'))===state.size);});
+    panel.querySelectorAll('[data-contrast]').forEach(function(b){b.classList.toggle('is-on',b.getAttribute('data-contrast')===state.contrast);});
+    panel.querySelectorAll('[data-toggle]').forEach(function(b){
+      var key=b.getAttribute('data-toggle');
+      var on=!!state[key];
+      b.classList.toggle('is-on',on);
+      var s=b.querySelector('.a11y-state');if(s)s.textContent=on?'Вкл':'Выкл';
+    });
+  }
+
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+
+  function openPanel(){panel.classList.add('open');panel.removeAttribute('hidden');toggle.setAttribute('aria-expanded','true');}
+  function closePanel(){panel.classList.remove('open');toggle.setAttribute('aria-expanded','false');setTimeout(function(){if(!panel.classList.contains('open'))panel.setAttribute('hidden','');},220);}
+
+  toggle.addEventListener('click',function(){
+    if(panel.classList.contains('open'))closePanel();else openPanel();
+  });
+  if(closeBtn)closeBtn.addEventListener('click',closePanel);
+  document.addEventListener('click',function(e){
+    if(panel.classList.contains('open')&&!panel.contains(e.target)&&e.target!==toggle&&!toggle.contains(e.target))closePanel();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePanel();});
+
+  panel.querySelectorAll('[data-size]').forEach(function(b){
+    b.addEventListener('click',function(){state.size=Number(b.getAttribute('data-size'));apply();save();});
+  });
+  panel.querySelectorAll('[data-contrast]').forEach(function(b){
+    b.addEventListener('click',function(){state.contrast=b.getAttribute('data-contrast');apply();save();});
+  });
+  panel.querySelectorAll('[data-toggle]').forEach(function(b){
+    b.addEventListener('click',function(){var key=b.getAttribute('data-toggle');state[key]=!state[key];apply();save();});
+  });
+  if(resetBtn)resetBtn.addEventListener('click',function(){
+    state={size:0,contrast:'default',font:false,links:false,cursor:false,motion:false};apply();save();
+  });
+
+  apply();
+})();
