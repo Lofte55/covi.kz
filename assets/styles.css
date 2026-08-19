@@ -682,7 +682,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
 .a11y-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 @media(max-width:640px){.a11y-panel{left:16px;bottom:76px}}
 .a11y-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
-.a11y-head h3{font-size:19px;margin:0;font-weight:800}
+.a11y-head h3{font-size:19px;margin:0;font-weight:800;color:#fff}
 .a11y-close{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.08);border:0;color:#fff;
   cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
 .a11y-desc{font-size:13px;color:#9aa3b2;line-height:1.5;margin-bottom:18px}
