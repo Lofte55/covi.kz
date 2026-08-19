@@ -712,9 +712,11 @@ html.a11y-cursor-big, html.a11y-cursor-big *{cursor:url('data:image/svg+xml;utf8
 html.a11y-motion-off *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 html.a11y-contrast-high{filter:contrast(1.25) saturate(1.15)}
 html.a11y-contrast-bw{filter:grayscale(1)}
-html.a11y-size-1 body{font-size:106%}
-html.a11y-size-2 body{font-size:113%}
-html.a11y-size-3 body{font-size:122%}
+html.a11y-size-1 body{zoom:1.1}
+html.a11y-size-2 body{zoom:1.2}
+html.a11y-size-3 body{zoom:1.32}
+html[class*="a11y-size-"] .fab,
+html[class*="a11y-size-"] .a11y-panel{zoom:1}
 
 /* -- industries served (audience cards) -- */
 .acard{display:flex;flex-direction:column;gap:12px;transition:.2s cubic-bezier(.16,1,.3,1)}
