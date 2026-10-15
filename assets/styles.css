@@ -88,6 +88,11 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
 .nav-links a:hover{color:var(--obsidian);background:rgba(0,0,0,.04)}
 .nav-links a.active{color:var(--blue-700)}
 .nav-cta{display:flex;align-items:center;gap:10px}
+.hero-contact{display:flex;gap:12px;flex-wrap:wrap}
+.nav-tg{padding-left:14px;padding-right:14px}
+.nav-links a{white-space:nowrap}
+@media(max-width:1180px){.nav-city{display:none}.nav-links a{padding:9px 10px}}
+.btn svg{flex:none}
 .burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--mist);background:var(--snow);
   cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
 .burger span{width:18px;height:2px;background:var(--graphite);border-radius:2px;transition:.2s}
@@ -531,6 +536,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
   .nav-mobile-extra .nme-msg{display:flex;gap:10px;padding:0 12px}
   .nav-mobile-extra .msg-ico{width:44px;height:44px}
   .nav-mobile-extra .btn{width:100%;justify-content:center;margin:0 12px;width:calc(100% - 24px)}
+  .nav-mobile-extra .btn+.btn{margin-top:10px}
   .nav-mobile-extra .nme-city{display:flex;align-items:center;gap:6px;color:var(--fog);font-size:13px;padding:0 12px}
   .nav-mobile-extra .nme-city svg{width:14px;height:14px;color:var(--blue-600)}
 }
@@ -553,7 +559,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
   .stat .lbl{font-size:12px;line-height:1.3}
   .hero .hero-grid div[style*="display:flex;gap:18px"]{justify-content:center;order:5;margin-bottom:0!important}
   .capture-label{order:6;margin-bottom:0!important}
-  .hero .hero-grid form.capture{margin-left:auto;margin-right:auto;order:7}
+  .hero .hero-grid .hero-contact{order:7;width:100%;justify-content:center}
   .hero .hero-photo{order:8}
 }
 @media(max-width:480px){
@@ -578,8 +584,8 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;color:var(--obsidian);line-height
   .route-btn{width:100%;justify-content:center}
   .cta-actions{flex-direction:column;align-items:stretch}
   .cta-actions .btn{width:100%;justify-content:center}
-  .btn-row{flex-direction:column;align-items:stretch}
-  .btn-row .btn{width:100%;justify-content:center}
+  .btn-row,.hero-contact{flex-direction:column;align-items:stretch}
+  .btn-row .btn,.hero-contact .btn{width:100%;justify-content:center}
 }
 
 /* -- process accordion: per-card image on mobile, only visible when expanded -- */
